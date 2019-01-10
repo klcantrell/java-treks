@@ -58,5 +58,25 @@ public class Main {
         if (topScore > 20 && topScore < 101) {
             System.out.println("Greater than 20 but less than 101");
         }
+
+        boolean isCar = false;
+        if (isCar == true) {
+            System.out.println("This is not supposed to happen");
+        }
+
+        isCar = true;
+        boolean isCarAgain = isCar ? true : false;
+        if (isCarAgain) {
+            System.out.println("isCarAgain is true");
+        }
+
+        // challenge
+
+        double challengeValue1 = 20d;
+        double challengeValue2 = 80d;
+        double challengeResult = (challengeValue1 + challengeValue2) * 25 % 40;
+        if (challengeResult <= 20) {
+            System.out.println("Total was over the limit!");
+        }
     }
 }
