@@ -1,15 +1,17 @@
 package com.app;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
-public class WeatherData implements CustomSubject {
+//public class WeatherData implements CustomSubject {
+public class WeatherData extends Observable {
     private ArrayList<CustomObserver> observers;
     private float temperature;
     private float humidity;
     private float pressure;
 
     public WeatherData() {
-        observers = new ArrayList<CustomObserver>();
+//        observers = new ArrayList<CustomObserver>();
     }
 
     public void registerObserver(CustomObserver o) {
@@ -23,13 +25,14 @@ public class WeatherData implements CustomSubject {
         }
     }
 
-    public void notifyObservers() {
-        for (CustomObserver observer: observers) {
-            observer.update(temperature, humidity, pressure);
-        }
-    }
+//    public void notifyObservers() {
+//        for (CustomObserver observer: observers) {
+//            observer.update(temperature, humidity, pressure);
+//        }
+//    }
 
     public void measurementsChanged() {
+        setChanged();
         notifyObservers();
     }
 
@@ -38,5 +41,17 @@ public class WeatherData implements CustomSubject {
         this.humidity = humidity;
         this.pressure = pressure;
         measurementsChanged();
+    }
+
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public float getPressure() {
+        return pressure;
     }
 }
