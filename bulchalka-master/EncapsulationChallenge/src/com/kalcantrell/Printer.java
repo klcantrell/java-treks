@@ -7,26 +7,43 @@ public class Printer {
     private boolean duplexOn;
 
     public Printer(int tonerLevel, boolean duplexOn) {
-        this.tonerLevel = tonerLevel;
+        if (tonerLevel > -1 && tonerLevel <= maxTonerLevel) {
+            this.tonerLevel = tonerLevel;
+        } else {
+            this.tonerLevel = 0;
+        }
         this.duplexOn = duplexOn;
         this.pagesPrinted = 0;
     }
 
     public void fillToner(int amount) {
+        if (amount <= 0) {
+            System.out.println("Can't add negative or zero toner");
+            return;
+        }
         if (tonerLevel + amount > maxTonerLevel) {
             tonerLevel = maxTonerLevel;
         } else {
             this.tonerLevel += amount;
         }
+        System.out.println("Toner level now at " + tonerLevel);
     }
 
-    public void print() {
-        if (duplexOn) {
-            pagesPrinted += 2;
-        } else {
-            pagesPrinted += 1;
+    public void print(int pages) {
+        if (pages > tonerLevel) {
+            System.out.println("Can't print all pages");
+            return;
         }
+        int pagesUsed;
+        if (duplexOn) {
+            pagesUsed = pages / 2 + pages % 2;
+        } else {
+            pagesUsed = pages;
+        }
+        pagesPrinted += pagesUsed;
+        tonerLevel -= pages;
         System.out.println("Total pages printed " + pagesPrinted);
+        System.out.println("Toner level " + tonerLevel);
     }
 
     public void toggleDuplexMode() {
