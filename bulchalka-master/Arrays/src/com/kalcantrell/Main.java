@@ -29,12 +29,15 @@ public class Main {
 //        System.out.println("The average is " + getAverage(myIntegers));
 
         ArraysChallenge arraysChallenge = new ArraysChallenge();
-        arraysChallenge.run();
+//        arraysChallenge.runAverageChallenge();
+//        arraysChallenge.runFindMinChallenge();
+        arraysChallenge.runReverseArrayChallenge();
     }
 
     public static void printArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            System.out.println("Element " + i + ", value is " + arr[i]);
+            int elementOrder = i + 1;
+            System.out.println("Element " + elementOrder + ", value is " + arr[i]);
         }
     }
 
