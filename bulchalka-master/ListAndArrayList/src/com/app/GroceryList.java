@@ -17,12 +17,20 @@ public class GroceryList {
     }
 
     public void modifyGroceryItem (int position, String newItem) {
-        groceryList.set(position, newItem)
+        groceryList.set(position, newItem);
         System.out.println("Grocery item " + position + " has been modified");
     }
 
     public void removeGroceryItem(int position) {
         String theItems = groceryList.get(position);
         groceryList.remove(position);
+    }
+
+    public String findItem(String searchItem) {
+        int position = groceryList.indexOf(searchItem);
+        if (position >= 0) {
+            return groceryList.get(position);
+        }
+        return null;
     }
 }
