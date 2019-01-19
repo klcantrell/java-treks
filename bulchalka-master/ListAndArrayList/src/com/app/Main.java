@@ -1,5 +1,7 @@
 package com.app;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -37,6 +39,9 @@ public class Main {
                 case 6:
                     quit = true;
                     break;
+                case 7:
+                    processArrayList();
+                    break;
             }
         }
     }
@@ -58,11 +63,41 @@ public class Main {
     }
 
     public static void modifyItem() {
-        System.out.println("Enter item number: ");
-        int itemNumber = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("Enter replacement item: ");
+        System.out.println("Enter original item: ");
+        String originalItem = scanner.nextLine();
+        System.out.println("Enter new item");
         String newItem = scanner.nextLine();
-        groceryList.modifyGroceryItem(itemNumber - 1, newItem);
+        groceryList.modifyGroceryItem(originalItem, newItem);
+    }
+
+    public static void removeItem() {
+        System.out.println("Enter item to be removed: ");
+        String itemToBeDeleted = scanner.nextLine();
+        groceryList.removeGroceryItem(itemToBeDeleted);
+    }
+
+    public static void searchForItem() {
+        System.out.println("Enter your choice: ");
+        String searchItem = scanner.nextLine();
+        if (groceryList.onFile(searchItem)) {
+            System.out.println("Found " + searchItem + " in our grocery list.");
+        } else {
+            System.out.println(searchItem + " is not on the shopping list.");
+        }
+    }
+
+    public static void processArrayList() {
+        // option 1
+        ArrayList<String> newArr = new ArrayList<String>();
+        newArr.addAll(groceryList.getGroceryList());
+
+        //option 2
+        ArrayList<String> nextArr = new ArrayList<String>(groceryList.getGroceryList());
+
+        //convert arraylist to array
+        String[] myStringArray = new String[groceryList.getGroceryList().size()];
+        myStringArray = groceryList.getGroceryList().toArray(myStringArray);
+
+        System.out.println("My string is now " + Arrays.toString(myStringArray));
     }
 }
