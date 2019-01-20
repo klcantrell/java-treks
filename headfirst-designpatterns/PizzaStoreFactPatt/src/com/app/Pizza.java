@@ -5,7 +5,7 @@ public abstract class Pizza {
     protected Dough dough;
     protected Sauce sauce;
     protected Cheese cheese;
-    protected Veggies veggies[];
+    protected Veggies[] veggies;
     protected Pepperoni pepperoni;
 
     public abstract void prepare();
