@@ -22,7 +22,7 @@ public class Demo {
         addInOrder(placesToVisit, "Darwin");
 
         visit(placesToVisit);
-    }
+}
 
     private static void printList(LinkedList<String> linkedList) {
         // iterator instead of for loop
@@ -36,7 +36,7 @@ public class Demo {
     private static boolean addInOrder(LinkedList<String> linkedList, String newCity) {
         ListIterator<String> stringListIterator = linkedList.listIterator();
 
-        while (stringListIterator.hasNext()) {
+    while (stringListIterator.hasNext()) {
             int comparison = stringListIterator.next().compareTo(newCity);
             if (comparison == 0) {
                 System.out.println(newCity + " already included as a destination");
@@ -89,7 +89,7 @@ public class Demo {
                         System.out.println("Now visiting " + listIterator.next());
                     } else {
                         System.out.println("Reached the end of the itinerary");
-                        goingForward = false;
+                    goingForward = false;
                     }
                     break;
                 case 2:
