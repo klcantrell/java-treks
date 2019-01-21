@@ -8,5 +8,12 @@ public class Main {
 	    kalsPhone.dial(123123);
 	    kalsPhone.receiveCall(123456);
 	    kalsPhone.answer();
+
+	    ITelephone kalsMobile = new MobilePhone(808123);
+	    kalsMobile.answer();
+	    kalsMobile.dial(123123);
+	    kalsMobile.powerOn();
+	    kalsMobile.receiveCall(808123);
+	    kalsMobile.answer();
     }
 }
