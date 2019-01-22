@@ -7,6 +7,7 @@ public class Parrot extends Bird {
 
     @Override
     public void fly() {
+        super.fly();
         System.out.println("Parrot " + getName() + " flitting from branch to branch");
     }
 }

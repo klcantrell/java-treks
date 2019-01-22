@@ -7,6 +7,7 @@ public class Penguin extends Bird {
 
     @Override
     public void fly() {
-        System.out.println("I'm not very good at that....I wonder if this was the best way to create reusable bird code");
+        super.fly();
+        System.out.println(getName() + " is not very good at that....I wonder if this was the best way to create reusable bird code");
     }
 }

@@ -1,6 +1,9 @@
 package com.app;
 
-public abstract class Bird extends Animal {
+// when to use interfaces vs inheritance?  consider is-a vs has-a relationships.
+// if "is-a", then inheritance.  if "has-a", then composition with the help of interfaces.
+
+public abstract class Bird extends Animal implements CanFly {
     public Bird(String name) {
         super(name);
     }
@@ -15,5 +18,7 @@ public abstract class Bird extends Animal {
         System.out.println("Bird " + getName() + " is breathing");
     }
 
-    public abstract void fly();
+    public void fly() {
+        System.out.println("Flapping wings");
+    };
 }
