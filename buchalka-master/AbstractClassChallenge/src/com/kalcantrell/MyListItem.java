@@ -3,7 +3,7 @@ package com.kalcantrell;
 public abstract class MyListItem<T> {
     private MyListItem next;
     private MyListItem previous;
-    private T value;
+    protected T value;
 
     abstract boolean isGreaterThan(T itemValue);
 
