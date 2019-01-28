@@ -6,16 +6,16 @@ import java.util.Scanner;
 
 public class Main {
     private static final Map<Integer, Location> locations = new HashMap<>();
-    private static final Map<String, String> locationsDirectionsMapping = new HashMap<>();
+    private static final Map<String, String> locationsVocabulary = new HashMap<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        locationsDirectionsMapping.put("WEST", "W");
-        locationsDirectionsMapping.put("NORTH", "N");
-        locationsDirectionsMapping.put("EAST", "E");
-        locationsDirectionsMapping.put("SOUTH", "S");
-        locationsDirectionsMapping.put("QUIT", "Q");
+        locationsVocabulary.put("WEST", "W");
+        locationsVocabulary.put("NORTH", "N");
+        locationsVocabulary.put("EAST", "E");
+        locationsVocabulary.put("SOUTH", "S");
+        locationsVocabulary.put("QUIT", "Q");
 
         locations.put(0, new Location(0, "You are sitting in front of a computer learning Java"));
         locations.put(1, new Location(1, "You are standing at the end of a road before a small brick building"));
@@ -59,7 +59,7 @@ public class Main {
             } else {
                 String validWord = validUserInput(direction);
                 if (validUserInput(direction) != null) {
-                    loc = exits.get(locationsDirectionsMapping.get(validWord));
+                    loc = exits.get(locationsVocabulary.get(validWord));
                 } else {
                     System.out.println("You cannot go in that direction");
                 }
@@ -74,8 +74,8 @@ public class Main {
     private static String validUserInput(String userInput) {
         String[] userInputWords = userInput.split(" ");
         for (String word : userInputWords) {
-            if (locationsDirectionsMapping.containsKey(word.toUpperCase())) {
-                return word.toUpperCase();
+            if (locationsVocabulary.containsKey(word)) {
+                return word;
             }
         }
         return null;
