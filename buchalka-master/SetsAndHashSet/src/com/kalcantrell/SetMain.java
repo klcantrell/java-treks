@@ -70,6 +70,20 @@ public class SetMain {
         natureDivineSymmetricDifference.removeAll(natureDivineIntersection);
         printSet(natureDivineSymmetricDifference);
 
+        // containsAll
+        if (nature.containsAll(divine)) {
+            System.out.println("divine is a subset of nature");
+        }
+
+        if (nature.containsAll(natureDivineIntersection)) {
+            System.out.println("natureDivineIntersection is a subset of nature");
+        }
+
+        if (divine.containsAll(natureDivineIntersection)) {
+            System.out.println("natureDivineIntersection is a subset of divine");
+        }
+
+
     }
 
     public static void printSet(Set<String> set) {
