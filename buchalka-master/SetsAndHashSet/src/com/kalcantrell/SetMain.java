@@ -36,5 +36,65 @@ public class SetMain {
         for (String s : words) {
             System.out.println(s);
         }
+
+        Set<String> nature = new HashSet<>();
+        Set<String> divine = new HashSet<>();
+
+        String[] natureWords = "all nature is but art unknown to thee".split(" ");
+        nature.addAll(Arrays.asList(natureWords));
+
+        String[] divineWords = "to err is human to forgive divine".split(" ");
+        divine.addAll(Arrays.asList(divineWords));
+
+        System.out.println("Asymmetric difference");
+        System.out.println("---------------------");
+
+        System.out.println("nature - divine");
+        Set<String> natureMinusDivine = new HashSet<>(nature);
+        natureMinusDivine.removeAll(divine);
+        printSet(natureMinusDivine);
+        
+        System.out.println("divine - nature");
+        Set<String> divineMinusNature = new HashSet<>(divine);
+        divineMinusNature.removeAll(nature);
+        printSet(divineMinusNature);
+
+        System.out.println("Symmetric difference");
+        System.out.println("---------------------");
+
+        Set<String> natureDivineUnion = new HashSet<>(nature);
+        natureDivineUnion.addAll(divine);
+        Set<String> natureDivineIntersection = new HashSet<>(nature);
+        natureDivineIntersection.retainAll(divine);
+        Set<String> natureDivineSymmetricDifference = new HashSet<>(natureDivineUnion);
+        natureDivineSymmetricDifference.removeAll(natureDivineIntersection);
+        printSet(natureDivineSymmetricDifference);
+
+    }
+
+    public static void printSet(Set<String> set) {
+        System.out.print("\t");
+        for (String s : set) {
+            System.out.print(s + " ");
+        }
+        System.out.println();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
