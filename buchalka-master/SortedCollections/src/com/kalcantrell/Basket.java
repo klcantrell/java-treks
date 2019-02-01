@@ -40,9 +40,7 @@ public class Basket {
     }
 
     public void emptyBasket() {
-        for (Map.Entry<StockItem, Integer> item : this.list.entrySet()) {
-            this.list = new TreeMap<>();
-        }
+        this.list.clear();
     }
 
     public Map<StockItem, Integer> getItems() {

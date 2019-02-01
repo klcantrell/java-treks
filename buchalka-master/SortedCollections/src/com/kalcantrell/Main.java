@@ -52,6 +52,9 @@ public class Main {
         reserveItem(kalsBasket, "juice", 4);
         reserveItem(kalsBasket, "cup", 12);
         reserveItem(kalsBasket, "bread", 1);
+        unreserveItem(kalsBasket, "bread", 20);
+        unreserveItem(kalsBasket, "cool whip", 20);
+        unreserveItem(kalsBasket, "door", 20);
         System.out.println(kalsBasket);
         System.out.println(stockList);
 
@@ -79,8 +82,7 @@ public class Main {
             return 0;
         }
         if (stockList.reserveStock(item, quantity) != 0) {
-            basket.addToBasket(stockItem, quantity);
-            return quantity;
+            return basket.addToBasket(stockItem, quantity);
         }
         System.out.println("We don't have enough " + item + "s to sell");
         return 0;
