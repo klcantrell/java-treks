@@ -6,7 +6,7 @@ import java.util.TreeMap;
 
 public class Basket {
     private final String name;
-    private final Map<StockItem, Integer> list;
+    private Map<StockItem, Integer> list;
 
     public Basket(String name) {
         this.name = name;
@@ -20,6 +20,29 @@ public class Basket {
             return inBasket;
         }
         return 0;
+    }
+
+    public int removeFromBasket(StockItem item, int quantity) {
+        if (item != null && quantity > 0) {
+            int inBasket = list.getOrDefault(item, 0);
+            if (inBasket == 0) {
+                System.out.println("You have no items to remove");
+                return 0;
+            }
+            if (inBasket - quantity < 0) {
+                System.out.println("You can only remove " + inBasket + " items");
+                return 0;
+            }
+            list.put(item, inBasket - quantity);
+            return quantity;
+        }
+        return 0;
+    }
+
+    public void emptyBasket() {
+        for (Map.Entry<StockItem, Integer> item : this.list.entrySet()) {
+            this.list = new TreeMap<>();
+        }
     }
 
     public Map<StockItem, Integer> getItems() {

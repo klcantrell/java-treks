@@ -23,10 +23,33 @@ public class StockList {
         return 0;
     }
 
+    public int reserveStock(String item, int quantity) {
+        StockItem inStock = list.getOrDefault(item, null);
+        if (inStock != null &&
+                inStock.quantityReserved() + quantity <= inStock.quantityInStock() &&
+                quantity > 0) {
+            inStock.adjustReserved(quantity);
+            return quantity;
+        }
+        return 0;
+    }
+
+    public int unreserveStock(String item, int quantity) {
+        StockItem inStock = list.getOrDefault(item, null);
+        if (inStock != null &&
+                inStock.quantityReserved() - quantity > 0 &&
+                quantity > 0) {
+            inStock.adjustReserved(-quantity);
+            return quantity;
+        }
+        return 0;
+    }
+
     public int sellStock(String item, int quantity) {
         StockItem inStock = list.getOrDefault(item, null);
         if (inStock != null && inStock.quantityInStock() >= quantity && quantity > 0) {
             inStock.adjustStock(-quantity);
+            inStock.adjustReserved(-quantity);
             return quantity;
         }
         return 0;
