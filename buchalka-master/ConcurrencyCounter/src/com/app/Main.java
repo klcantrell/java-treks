@@ -16,7 +16,8 @@ public class Main {
 
 class Countdown {
     private int i; // this will be stored on the shared heap rather than the individual thread stack
-                    // both threads will then have access to it
+                    // both threads will then have access to it unless they are "synchronized"
+
 
     public void doCountdown() {
         String color;
@@ -33,8 +34,10 @@ class Countdown {
                 break;
         }
 
-        for (i = 10; i > 0; i--) {
-            System.out.println(color + Thread.currentThread().getName() + ": i =" + i);
+        synchronized (this) {
+            for (i = 10; i > 0; i--) {
+                System.out.println(color + Thread.currentThread().getName() + ": i =" + i);
+            }
         }
     }
 }
