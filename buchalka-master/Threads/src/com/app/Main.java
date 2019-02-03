@@ -23,9 +23,17 @@ public class Main {
             @Override
             public void run() {
                 System.out.println(ThreadColor.ANSI_CYAN + "Hello from the anonymous runnable");
+                try {
+                    //anotherThread.join(2000); // adding a timeout
+                    anotherThread.join();
+                    System.out.println(ThreadColor.ANSI_RED + "AnotherThread terminated or timed out, so I'm running again");
+                } catch (InterruptedException e) {
+                    System.out.println(ThreadColor.ANSI_RED + "I couldn't wait after all.  I was interrupted");
+                }
             }
         });
         myAnonymousRunnableThread.start();
+        //anotherThread.interrupt(); // this is how you interrupt a thread
 
         System.out.println(ThreadColor.ANSI_PURPLE + "Hello again from the main thread");
     }
