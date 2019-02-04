@@ -1,21 +1,8 @@
 package com.app;
 
-public class Main {
+public class RemoteMain {
 
     public static void main(String[] args) {
-        System.out.println("Simple remote");
-        Light light = new Light("Test");
-        Command lightOnCommand = new LightOnCommand(light);
-
-        GarageDoor testGarageDoor = new GarageDoor();
-        Command garageDoorCommand = new GarageDoorOpenCommand(testGarageDoor);
-
-        SimpleRemoteControl simpleRemoteControl = new SimpleRemoteControl();
-        simpleRemoteControl.setCommand(lightOnCommand);
-        simpleRemoteControl.buttonWasPressed();
-        simpleRemoteControl.setCommand(garageDoorCommand);
-        simpleRemoteControl.buttonWasPressed();
-
         System.out.println("Remote");
         RemoteControl remoteControl = new RemoteControl();
 
@@ -30,7 +17,7 @@ public class Main {
         LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
         LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
 
-        CeilingFanOnCommand ceilingFanOn = new CeilingFanOnCommand(ceilingFan);
+        CeilingFanHighCommand ceilingFanOn = new CeilingFanHighCommand(ceilingFan);
         CeilingFanOffCommand ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
 
         GarageDoorOpenCommand garageDoorOpen = new GarageDoorOpenCommand(garageDoor);
@@ -54,6 +41,8 @@ public class Main {
         remoteControl.undoButtonWasPushed();
         remoteControl.onButtonWasPushed(2);
         remoteControl.offButtonWasPushed(2);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPushed();
         remoteControl.onButtonWasPushed(3);
         remoteControl.offButtonWasPushed(3);
     }
