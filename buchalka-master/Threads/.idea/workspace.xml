@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fea9f32f-0fda-4175-a5ef-9242b888fbe4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ConcurrencyMessages/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ConcurrencyMessages/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fea9f32f-0fda-4175-a5ef-9242b888fbe4" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +14,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/app/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="432">
               <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
             </state>
           </provider>
@@ -45,9 +43,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="261" />
+    <option name="x" value="58" />
+    <option name="y" value="33" />
     <option name="width" value="1588" />
-    <option name="height" value="1087" />
+    <option name="height" value="1070" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -55,7 +54,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -78,6 +76,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -128,9 +127,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="261" y="0" width="1588" height="1087" extended-state="0" />
+    <frame x="58" y="33" width="1588" height="1070" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25981677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.263089" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -190,7 +189,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/app/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
+        <state relative-caret-position="432">
           <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
         </state>
       </provider>
