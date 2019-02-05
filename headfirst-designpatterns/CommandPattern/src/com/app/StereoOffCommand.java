@@ -10,4 +10,8 @@ public class StereoOffCommand implements Command {
     public void execute() {
         this.stereo.off();
     }
+
+    public void undo() {
+        this.stereo.on();
+    }
 }

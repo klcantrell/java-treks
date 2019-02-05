@@ -10,4 +10,8 @@ public class TvOffCommand implements Command {
     public void execute() {
         tv.off();
     }
+
+    public void undo() {
+        tv.on();
+    }
 }

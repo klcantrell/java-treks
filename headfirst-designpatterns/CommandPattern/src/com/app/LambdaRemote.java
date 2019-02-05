@@ -1,23 +1,22 @@
 package com.app;
 
-public class RemoteControl {
-    private Command[] onCommands;
-    private Command[] offCommands;
-    private Command undoCommand;
+public class LambdaRemote {
+    private FunctionalCommand[] onCommands;
+    private FunctionalCommand[] offCommands;
+    private FunctionalCommand undoCommand;
 
-    public RemoteControl() {
-        onCommands = new Command[7];
-        offCommands = new Command[7];
+    public LambdaRemote() {
+        onCommands = new FunctionalCommand[7];
+        offCommands = new FunctionalCommand[7];
 
-        Command noCommand = new NoCommand();
         for (int i = 0; i < 7; i++) {
-            onCommands[i] = noCommand;
-            offCommands[i] = noCommand;
+            onCommands[i] = () -> { };
+            offCommands[i] = () -> { };
         }
-        undoCommand = noCommand;
+        undoCommand = () -> { };
     }
 
-    public void setCommand(int slot, Command onCommand, Command offCommand) {
+    public void setCommand(int slot, FunctionalCommand onCommand, FunctionalCommand offCommand) {
         onCommands[slot] = onCommand;
         offCommands[slot] = offCommand;
     }

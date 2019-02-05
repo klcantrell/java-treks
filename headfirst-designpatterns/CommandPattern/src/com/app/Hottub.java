@@ -11,6 +11,10 @@ public class Hottub {
         System.out.println("Hottub is off");
     }
 
+    public int getTemperature() {
+        return temperature;
+    }
+
     public void setTemperature(int temperature) {
         this.temperature = temperature;
         if (temperature < 0) {

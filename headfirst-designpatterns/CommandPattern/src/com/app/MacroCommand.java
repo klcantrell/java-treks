@@ -12,4 +12,10 @@ public class MacroCommand implements Command {
             command.execute();
         }
     }
+
+    public void undo() {
+        for (Command command : commands) {
+            command.undo();
+        }
+    }
 }
