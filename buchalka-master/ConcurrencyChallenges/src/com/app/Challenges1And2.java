@@ -1,8 +1,8 @@
 package com.app;
 
-public class Challenge1And2 {
+public class Challenges1And2 {
     public static void main(String[] args) {
-        BankAccount bankAccount = new BankAccount("12345-678", 1000.00);
+        BankAccount1And2 bankAccount = new BankAccount1And2("12345-678", 1000.00);
 
         new Thread(new Runnable() {
             @Override
@@ -22,11 +22,11 @@ public class Challenge1And2 {
     }
 }
 
-class BankAccount {
+class BankAccount1And2 {
     private double balance;
     private String accountNumber;
 
-    public BankAccount(String accountNumber, double initialBalance) {
+    public BankAccount1And2(String accountNumber, double initialBalance) {
         this.accountNumber = accountNumber;
         this.balance = initialBalance;
     }
