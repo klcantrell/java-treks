@@ -2,7 +2,10 @@ package com.app;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.function.IntPredicate;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class Main {
 
@@ -23,7 +26,31 @@ public class Main {
         employees.add(charming);
 
         printEmployeesByAge(employees, "Employees over 30", employee -> employee.getAge() > 30);
-        printEmployeesByAge(employees, "Employees over 30", employee -> employee.getAge() <= 30);
+        printEmployeesByAge(employees, "Employees 30 and under", employee -> employee.getAge() <= 30);
+        printEmployeesByAge(employees, "Employees under 25", new Predicate<Employee>() {
+            @Override
+            public boolean test(Employee employee) {
+                return employee.getAge() < 25;
+            }
+        });
+
+        //specifically typed predicate
+        IntPredicate greaterThan15 = i -> i > 15;
+        IntPredicate lessThan100 = i -> i < 100;
+        System.out.println(greaterThan15.test(10));
+        int a = 20;
+        System.out.println(greaterThan15.test(a + 5));
+
+        // chaining predicates
+        System.out.println(greaterThan15.and(lessThan100).test(50));
+        System.out.println(greaterThan15.and(lessThan100).test(15));
+
+        // supplier
+        Random random = new Random();
+        Supplier<Integer> randomSupplier = () -> random.nextInt(1000);
+        for (int i = 0; i < 10; i++) {
+            System.out.println(randomSupplier.get());
+        }
     }
 
     private static void printEmployeesByAge(List<Employee> employees, String ageText, Predicate<Employee> ageCondition) {
