@@ -1,8 +1,6 @@
 package com.app;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -25,9 +23,16 @@ public class Main {
         employees.add(jack);
         employees.add(snow);
 
-        AnotherClass anotherClass = new AnotherClass();
-        String s = anotherClass.doSomething();
-        System.out.println(s);
+        // effectively final employee for each iteration
+//        for (Employee employee : employees) {
+//            System.out.println(employee.getName());
+//            new Thread(() -> System.out.println(employee.getAge())).start();
+//        }
+
+        employees.forEach(employee -> {
+            System.out.println(employee.getName());
+            System.out.println(employee.getAge());
+        });
     }
 
     public final static String doStringStuff(UpperConcat uc, String s1, String s2) {
@@ -77,13 +82,15 @@ class AnotherClass {
 //            }
 //        }, "String 1", "String 2");
 
-        int i = 0;
+        // must be effectively final if used in a lambda
+         int i = 0;
 
         // with a lambda
         System.out.println("AnotherClass class's name is " + getClass().getSimpleName());
         return Main.doStringStuff((s1, s2) -> {
             // lambda has the same name because it is treated like it has the same scope that a nested block of code would
             System.out.println("The lambda expression's class is " + getClass().getSimpleName());
+            System.out.println("i in the lambda = " + i);
             return s1.toUpperCase() + " " + s2.toUpperCase();
         }, "String 1", "String 2");
 
@@ -94,7 +101,6 @@ class AnotherClass {
         // needs to be final because anonymous classes that get passed around can't reference a variable that may change (won't see the change).
         // think of it like java doesn't have closures (it actually does but needs specific conditions)
 //        final int i = 0;
-
 
 //        // nested block example without a lambda
 //        {
@@ -111,5 +117,20 @@ class AnotherClass {
 //            return Main.doStringStuff(uc, "String 1", "String 2");
 //        }
 
+    }
+
+    public void printValue() {
+        // effectively final so that lambda can grab onto the final and execute with it once it runs
+        int number = 25;
+        Runnable r = () -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("the value is " + number);
+        };
+
+        new Thread(r).start();
     }
 }
