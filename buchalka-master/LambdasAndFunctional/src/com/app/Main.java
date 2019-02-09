@@ -3,6 +3,7 @@ package com.app;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Function;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -51,6 +52,29 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             System.out.println(randomSupplier.get());
         }
+
+        Function<Employee, String> getLastName = employee -> employee.getName().split(" ")[1];
+        String testGetLastName = getLastName.apply(employees.get(2));
+
+        Function<Employee, String> getFirstName = employee -> employee.getName().split(" ")[0];
+
+        employees.forEach(employee -> {
+            String lastName = employee.getName().split(" ")[1];
+            System.out.println("Last name is: " + lastName);
+        });
+
+        Random anotherRandom = new Random();
+        for (Employee employee : employees) {
+            if (anotherRandom.nextBoolean()) {
+                System.out.println(getAName(getFirstName, employee));
+            } else {
+                System.out.println(getAName(getLastName, employee));
+            }
+        }
+    }
+
+    private static String getAName(Function<Employee, String> getName, Employee employee) {
+        return getName.apply(employee);
     }
 
     private static void printEmployeesByAge(List<Employee> employees, String ageText, Predicate<Employee> ageCondition) {
