@@ -3,8 +3,10 @@ package com.app;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.IntPredicate;
+import java.util.function.IntUnaryOperator;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
@@ -71,6 +73,21 @@ public class Main {
                 System.out.println(getAName(getLastName, employee));
             }
         }
+
+        System.out.println("\nFunction composition");
+        // function composition
+        Function<Employee, String> upperCase = employee -> employee.getName().toUpperCase();
+        Function<String, String> extractFirstName = name -> name.split(" ")[0];
+        Function<Employee, String> getUpperCasedFirstName = upperCase.andThen(extractFirstName);
+        System.out.println(getUpperCasedFirstName.apply(employees.get(4)));
+
+        BiFunction<String, Employee, String> concatAge = (name, employee) -> name.concat(" " + employee.getAge());
+        String upperName = upperCase.apply(employees.get(0));
+        System.out.println(concatAge.apply(upperName, employees.get(0)));
+
+        // unary operator (specific function interfaces) that take in and return the same type
+        IntUnaryOperator incBy5 = i -> i + 5;
+        System.out.println(incBy5.applyAsInt(10));
     }
 
     private static String getAName(Function<Employee, String> getName, Employee employee) {
