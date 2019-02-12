@@ -3,6 +3,7 @@ package com.app;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("The application is running");
+        Utilities utils = new Utilities();
+        String result = utils.removePairs("AA");
     }
 }
