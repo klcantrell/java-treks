@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8e16b8b8-be86-4d9c-831b-47cebe6ba212" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUnit.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,38 +13,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/app/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/app/BankAccount.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/app/BankAccountTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="30" selection-start-line="30" selection-end-line="31" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/app/BankAccountTestParameterized.java">
+        <entry file="file://$PROJECT_DIR$/src/com/app/Utilities.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="32" column="63" lean-forward="true" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
+            <state relative-caret-position="230">
+              <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/app/UtilitiesTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -55,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -71,10 +52,12 @@
         <option value="$PROJECT_DIR$/src/com/app/BankAccount.java" />
         <option value="$PROJECT_DIR$/src/com/app/BankAccountTest.java" />
         <option value="$PROJECT_DIR$/src/com/app/BankAccountTestParameterized.java" />
+        <option value="$PROJECT_DIR$/src/com/app/UtilitiesTest.java" />
+        <option value="$PROJECT_DIR$/src/com/app/Utilities.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="332" />
     <option name="width" value="1355" />
     <option name="height" value="1017" />
@@ -85,6 +68,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -107,7 +91,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -116,7 +99,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549936031368" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549938793841" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -146,17 +129,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BankAccountTestParameterized.deposit">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.app.Main" />
-      <module name="JUnit" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.UtilitiesTest.removePairs">
     <configuration name="BankAccountTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="JUnit" />
       <extension name="coverage">
@@ -221,15 +194,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UtilitiesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JUnit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.app" />
+      <option name="MAIN_CLASS_NAME" value="com.app.UtilitiesTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UtilitiesTest.removePairs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JUnit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.app" />
+      <option name="MAIN_CLASS_NAME" value="com.app.UtilitiesTest" />
+      <option name="METHOD_NAME" value="removePairs" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.BankAccountTest" />
       <item itemvalue="JUnit.BankAccountTest.withdraw" />
       <item itemvalue="JUnit.BankAccountTestParameterized.deposit" />
       <item itemvalue="JUnit.BankAccountTestParameterized.deposit (1)" />
+      <item itemvalue="JUnit.UtilitiesTest" />
+      <item itemvalue="JUnit.UtilitiesTest.removePairs" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UtilitiesTest.removePairs" />
+        <item itemvalue="JUnit.UtilitiesTest" />
         <item itemvalue="JUnit.BankAccountTestParameterized.deposit" />
         <item itemvalue="JUnit.BankAccountTestParameterized.deposit (1)" />
         <item itemvalue="JUnit.BankAccountTest.withdraw" />
@@ -250,42 +256,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BankAccountTest - 2019.02.11 at 14h 33m 14s.xml">
-      <configuration name="BankAccountTest" configurationId="JUnit" />
+    <history-entry file="BankAccountTestParameterized_deposit - 2019.02.11 at 20h 46m 24s.xml">
+      <configuration name="BankAccountTestParameterized.deposit" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BankAccountTest - 2019.02.11 at 14h 35m 58s.xml">
-      <configuration name="BankAccountTest" configurationId="JUnit" />
+    <history-entry file="UtilitiesTest - 2019.02.11 at 21h 02m 56s.xml">
+      <configuration name="UtilitiesTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BankAccountTest - 2019.02.11 at 15h 23m 58s.xml">
-      <configuration name="BankAccountTest" configurationId="JUnit" />
+    <history-entry file="UtilitiesTest_removePairs - 2019.02.11 at 21h 11m 50s.xml">
+      <configuration name="UtilitiesTest.removePairs" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BankAccountTest - 2019.02.11 at 15h 27m 11s.xml">
-      <configuration name="BankAccountTest" configurationId="JUnit" />
+    <history-entry file="UtilitiesTest_removePairs - 2019.02.11 at 21h 13m 03s.xml">
+      <configuration name="UtilitiesTest.removePairs" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BankAccountTest - 2019.02.11 at 16h 16m 04s.xml">
-      <configuration name="BankAccountTest" configurationId="JUnit" />
+    <history-entry file="UtilitiesTest_removePairs - 2019.02.11 at 21h 14m 41s.xml">
+      <configuration name="UtilitiesTest.removePairs" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BankAccountTest - 2019.02.11 at 16h 16m 48s.xml">
-      <configuration name="BankAccountTest" configurationId="JUnit" />
+    <history-entry file="UtilitiesTest_removePairs - 2019.02.11 at 21h 15m 34s.xml">
+      <configuration name="UtilitiesTest.removePairs" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BankAccountTest_withdraw - 2019.02.11 at 16h 33m 18s.xml">
-      <configuration name="BankAccountTest.withdraw" configurationId="JUnit" />
+    <history-entry file="UtilitiesTest_removePairs - 2019.02.11 at 21h 18m 04s.xml">
+      <configuration name="UtilitiesTest.removePairs" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BankAccountTest - 2019.02.11 at 16h 33m 42s.xml">
-      <configuration name="BankAccountTest" configurationId="JUnit" />
+    <history-entry file="UtilitiesTest_removePairs - 2019.02.11 at 21h 19m 00s.xml">
+      <configuration name="UtilitiesTest.removePairs" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BankAccountTest - 2019.02.11 at 16h 34m 31s.xml">
-      <configuration name="BankAccountTest" configurationId="JUnit" />
+    <history-entry file="UtilitiesTest_removePairs - 2019.02.11 at 21h 19m 37s.xml">
+      <configuration name="UtilitiesTest.removePairs" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BankAccountTest - 2019.02.11 at 16h 34m 40s.xml">
-      <configuration name="BankAccountTest" configurationId="JUnit" />
+    <history-entry file="UtilitiesTest_removePairs - 2019.02.11 at 21h 26m 56s.xml">
+      <configuration name="UtilitiesTest.removePairs" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1858" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28531703" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33147943" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -314,6 +320,7 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/app/BankAccountTestAgain.java" />
     <entry file="file://$PROJECT_DIR$/src/com/app/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -321,25 +328,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/app/BankAccountTestAgain.java" />
     <entry file="file://$PROJECT_DIR$/src/com/app/BankAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
+        <state relative-caret-position="897">
           <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/app/BankAccountTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
+        <state relative-caret-position="690">
           <caret line="30" selection-start-line="30" selection-end-line="31" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/app/BankAccountTestParameterized.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="32" column="63" lean-forward="true" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
+        <state relative-caret-position="692">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/app/Challenge1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/app/UtilitiesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/app/Utilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
         </state>
       </provider>
     </entry>
