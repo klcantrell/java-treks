@@ -2,13 +2,29 @@ package com.app;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class UtilitiesTest {
-    static Utilities utils;
+    static Stream<Arguments> removePairs_Parameters() {
+        return Stream.of(
+                Arguments.of("ABCDEFF", "ABCDEF"),
+                Arguments.of("AB88EFFG", "AB8EFG"),
+                Arguments.of("112233445566", "123456"),
+                Arguments.of("ZYZQQB", "ZYZQB"),
+                Arguments.of("A", "A")
+        );
+    }
+
+    private Utilities utils;
 
     @BeforeEach
     void setup() {
@@ -17,44 +33,54 @@ class UtilitiesTest {
 
     @Test
     void everyNthChar() {
-        fail("Test must be implemented");
+        char[] actual = utils.everyNthChar(new char[] {'h', 'e', 'l', 'l', 'o'}, 2);
+
+        assertArrayEquals(new char[] {'e', 'l'}, actual);
+    }
+
+    @Test
+    void everyNthChar_nGreaterThanArray() {
+        char[] source = new char[] {'h', 'e', 'l', 'l', 'o'};
+        char[] actual = utils.everyNthChar(source, 6);
+
+        assertArrayEquals(source, actual);
     }
 
     @Test
     void removePairs() {
-        String testCase1 = utils.removePairs("AABCDDEFF");
-        String testCase2 = utils.removePairs("ABCCABDEEF");
+        String actual1 = utils.removePairs("AABCDDEFF");
+        String actual2 = utils.removePairs("ABCCABDEEF");
 
-        assertEquals("ABCDEF", testCase1);
-        assertEquals("ABCABDEF", testCase2);
+        assertEquals("ABCDEF", actual1);
+        assertEquals("ABCABDEF", actual2);
     }
 
-    @Test
-    void removePairs_sourceLengthTwoNonPair() {
-        String testCase = utils.removePairs("AB");
-
-        assertEquals("AB", testCase);
+    @ParameterizedTest(name="Run {index}: source={0}, expected={1}")
+    @MethodSource("removePairs_Parameters")
+    void removePairs_parameterized(String source, String expected) {
+        String actual = utils.removePairs(source);
+        assertEquals(expected, actual);
     }
 
     @Test
     void removePairs_sourceLengthTwoPair() {
-        String testCase = utils.removePairs("AA");
+        String actual = utils.removePairs("AA");
 
-        assertEquals("A", testCase);
+        assertEquals("A", actual);
     }
 
     @Test
     void removePairs_sourceLengthOne() {
-        String testCase = utils.removePairs("A");
+        String actual = utils.removePairs("A");
 
-        assertEquals("A", testCase);
+        assertEquals("A", actual);
     }
 
     @Test
     void removePairs_sourceLengthEmpty() {
-        String testCase = utils.removePairs("");
+        String actual = utils.removePairs("");
 
-        assertEquals("", testCase);
+        assertEquals("", actual);
     }
 
     @Test
@@ -63,12 +89,29 @@ class UtilitiesTest {
     }
 
     @Test
-    void converter() {
-        fail("Test must be implemented");
+    void converter_a10b5() {
+        int actual = utils.converter(10, 5);
+        assertEquals(300, actual);
     }
 
     @Test
-    void nullIfOddLength() {
-        fail("Test must be implemented");
+    void converter_a10b0() {
+        assertThrows(ArithmeticException.class, () -> utils.converter(10, 0)) ;
+    }
+
+    @Test
+    void nullIfOddLength_sourceEven() {
+        String source = "hi";
+        String actual = utils.nullIfOddLength(source);
+
+        assertEquals(source, actual);
+    }
+
+    @Test
+    void nullIfOddLength_sourceOdd() {
+        String source = "why";
+        String actual = utils.nullIfOddLength(source);
+
+        assertNull(actual);
     }
 }

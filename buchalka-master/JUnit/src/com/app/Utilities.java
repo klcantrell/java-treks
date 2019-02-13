@@ -42,7 +42,7 @@ public class Utilities {
 
     // perform a conversion based on some internal business rule
     public int converter(int a, int b) {
-        return (a / b) + (a * 2) - 2;
+        return (a / b) + (a * 30) - 2;
     }
 
     public String nullIfOddLength(String source) {
