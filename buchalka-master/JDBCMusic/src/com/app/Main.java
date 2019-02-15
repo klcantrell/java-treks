@@ -2,7 +2,7 @@ package com.app;
 
 import com.app.model.Artist;
 import com.app.model.DataSource;
-import com.app.model.DataSource.ORDER_BY;
+import com.app.model.DataSource.OrderBy;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class Main {
             return;
         }
 
-        List<Artist> artists = dataSource.queryArtists(ORDER_BY.ASC);
+        List<Artist> artists = dataSource.queryArtists(OrderBy.ASC);
         if (artists == null) {
             System.out.println("No artists!");
             return;
@@ -25,6 +25,10 @@ public class Main {
         artists.forEach(artist -> {
             System.out.println("ID = " + artist.getId() + ", Name = " + artist.getName());
         });
+
+        List<String> albumsForArtist = dataSource.queryAlbumsForArtist("Iron Maiden", OrderBy.ASC);
+
+        albumsForArtist.forEach(System.out::println);
 
         dataSource.close();
     }

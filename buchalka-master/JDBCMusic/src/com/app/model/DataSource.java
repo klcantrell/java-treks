@@ -36,7 +36,16 @@ public class DataSource {
     public static final int INDEX_SONG_TITLE = 3;
     public static final int INDEX_SONG_ALBUM = 4;
 
-    public enum ORDER_BY {
+    public static final String QUERY_ALBUMS_BY_ARTIST_START =
+            "SELECT " + TABLE_ALBUMS + "." + COLUMN_ALBUM_NAME + " FROM " + TABLE_ALBUMS +
+                    " INNER JOIN " + TABLE_ARTISTS + " ON " + TABLE_ALBUMS + "." + COLUMN_ALBUM_ARTIST +
+                    " = " + TABLE_ARTISTS + "." + COLUMN_ARTIST_ID +
+                    " WHERE " + TABLE_ARTISTS + "." + COLUMN_ALBUM_NAME + " = \"";
+
+    public static final String QUERY_ALBUMS_BY_ARTIST_SORT_START =
+            " ORDER BY " + TABLE_ALBUMS + "." + COLUMN_ALBUM_NAME + " COLLATE NOCASE ";
+
+    public enum OrderBy {
         NONE,
         ASC,
         DESC,
@@ -64,14 +73,14 @@ public class DataSource {
         }
     }
 
-    public List<Artist> queryArtists(ORDER_BY sortOrder) {
+    public List<Artist> queryArtists(OrderBy sortOrder) {
         StringBuilder sb = new StringBuilder("SELECT * FROM ");
         sb.append(TABLE_ARTISTS);
-        if (sortOrder != ORDER_BY.NONE) {
+        if (sortOrder != OrderBy.NONE) {
             sb.append(" ORDER BY ");
             sb.append(COLUMN_ARTIST_NAME);
             sb.append(" COLLATE NOCASE ");
-            if (sortOrder == ORDER_BY.DESC) {
+            if (sortOrder == OrderBy.DESC) {
                 sb.append("DESC");
             } else {
                 sb.append("ASC");
@@ -93,6 +102,38 @@ public class DataSource {
 
         } catch (SQLException e) {
             System.out.println("query failed: " + e.getMessage());
+            return null;
+        }
+    }
+
+    public List<String> queryAlbumsForArtist(String artistName, OrderBy sortOrder) {
+        StringBuilder sb = new StringBuilder(QUERY_ALBUMS_BY_ARTIST_START);
+        sb.append(artistName);
+        sb.append("\"");
+
+        if (sortOrder != OrderBy.NONE) {
+            sb.append(QUERY_ALBUMS_BY_ARTIST_SORT_START);
+            if (sortOrder == OrderBy.DESC) {
+                sb.append("DESC");
+            } else {
+                sb.append("ASC");
+            }
+        }
+
+        System.out.println("SQL statement = " + sb.toString());
+
+        try (Statement statement = conn.createStatement();
+            ResultSet results = statement.executeQuery(sb.toString())) {
+
+            List<String> albums = new ArrayList<>();
+            while (results.next()) {
+                albums.add(results.getString(1));
+            }
+
+            return albums;
+
+        } catch (SQLException e) {
+            System.out.println("Query failed " + e.getMessage());
             return null;
         }
     }
