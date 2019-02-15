@@ -7,43 +7,44 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Main {
-    public static final String DB_NAME = "testjava.db";
-    public static final String CONNECTION_STRING = "jdbc:sqlite:databases" + DB_NAME;
+    private static final String DB_NAME = "testjava.db";
+    private static final String CONNECTION_STRING = "jdbc:sqlite:databases/" + DB_NAME;
 
-    public static final String TABLE_CONTACTS = "contacts";
-    public static final String COLUMN_NAME = "name";
-    public static final String COLUMN_PHONE = "phone";
-    public static final String COLUMN_EMAIL = "email";
+    private static final String TABLE_CONTACTS = "contacts";
+    private static final String COLUMN_NAME = "name";
+    private static final String COLUMN_PHONE = "phone";
+    private static final String COLUMN_EMAIL = "email";
 
     public static void main(String[] args) {
         try {
             Connection conn = DriverManager.getConnection(CONNECTION_STRING);
-            //conn.setAutoCommit(false);
 
             Statement statement = conn.createStatement();
 
-            statement.execute("CREATE TABLE IF NOT EXISTS contacts" +
-                    "(name TEXT, phone INTEGER, email TEXT)");
+            statement.execute("DROP TABLE IF EXISTS " + TABLE_CONTACTS);
 
-//            statement.execute("INSERT INTO contacts(name, phone, email) " +
-//                    "VALUES('Joe', 123123, 'joe@email.com')");
-//
-//            statement.execute("INSERT INTO contacts(name, phone, email) " +
-//                    "VALUES('Jane', 098098, 'jane@email.com')");
-//
-//            statement.execute("INSERT INTO contacts(name, phone, email) " +
-//                    "VALUES('Dudley', 8484, 'duds@email.com')");
+            statement.execute("CREATE TABLE " + TABLE_CONTACTS + "(" +
+                    COLUMN_NAME + " TEXT, " +
+                    COLUMN_PHONE + " INTEGER, " +
+                    COLUMN_EMAIL + " TEXT)");
 
-//            statement.execute("UPDATE contacts SET phone='01298' WHERE name='Jane'");
+            insertContact(statement, "Tim", 123123, "tim@email.com");
 
-//            statement.execute("DELETE FROM contacts WHERE name='Joe'");
+            insertContact(statement, "Jane", 98098, "jane@email.com");
 
-            // querying with .execute
-//            statement.execute("SELECT * FROM contacts");
-//            ResultSet results = statement.getResultSet();
+            insertContact(statement, "Joe", 83838, "joe@email.com");
+
+            insertContact(statement, "Dudley", 1010, "duds@email.com");
+
+            statement.execute("UPDATE " + TABLE_CONTACTS + " SET " +
+                    COLUMN_PHONE + "=777777" +
+                    " WHERE " + COLUMN_NAME + "='Jane'");
+
+            statement.execute("DELETE FROM " + TABLE_CONTACTS +
+                    " WHERE " + COLUMN_NAME + "='Joe'");
 
             // querying with .executeQuery
-            ResultSet results = statement.executeQuery("SELECT * FROM contacts");
+            ResultSet results = statement.executeQuery("SELECT * FROM " + TABLE_CONTACTS);
             while (results.next()) {
                 System.out.println(
                         results.getString(COLUMN_NAME) + " " +
@@ -59,5 +60,13 @@ public class Main {
         } catch (SQLException e) {
             System.out.println("Something went wrong: " + e.getMessage());
         }
+    }
+
+    private static void insertContact(Statement statement, String name, int phone, String email) throws SQLException {
+        statement.execute("INSERT INTO " + TABLE_CONTACTS + "(" +
+                COLUMN_NAME + ", " +
+                COLUMN_PHONE + ", " +
+                COLUMN_EMAIL + ") " +
+                "VALUES('" + name + "'," + phone + ", '" + email + "')");
     }
 }
