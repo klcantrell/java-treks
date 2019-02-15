@@ -2,6 +2,7 @@ package com.app;
 
 import com.app.model.Artist;
 import com.app.model.DataSource;
+import com.app.model.DataSource.ORDER_BY;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Main {
             return;
         }
 
-        List<Artist> artists = dataSource.queryArtists();
+        List<Artist> artists = dataSource.queryArtists(ORDER_BY.ASC);
         if (artists == null) {
             System.out.println("No artists!");
             return;
