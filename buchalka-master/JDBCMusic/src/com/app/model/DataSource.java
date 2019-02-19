@@ -91,7 +91,7 @@ public class DataSource {
             " WHERE " + COLUMN_SONG_TITLE + " = ?";
 
     public static final String INSERT_ARTIST =
-        "INSERT INTO " + TABLE_ARTISTS + "(" + COLUMN_ARTIST_NAME + ") VALUES(?, ?)";
+        "INSERT INTO " + TABLE_ARTISTS + "(" + COLUMN_ARTIST_NAME + ") VALUES(?)";
 
     public static final String INSERT_ALBUM =
         "INSERT INTO " + TABLE_ALBUMS + "(" + COLUMN_ALBUM_NAME + ", " + COLUMN_ALBUM_ARTIST + ") VALUES(?, ?)";
@@ -105,7 +105,7 @@ public class DataSource {
             " WHERE " + COLUMN_ARTIST_NAME + " = ?";
 
     public static final String QUERY_ALBUM =
-        "SELECT" + COLUMN_ALBUM_ID + " FROM " + TABLE_ARTISTS +
+        "SELECT " + COLUMN_ALBUM_ID + " FROM " + TABLE_ARTISTS +
             " WHERE " + COLUMN_ALBUM_NAME + " = ?";
 
     private PreparedStatement querySongInfoView;
@@ -328,6 +328,84 @@ public class DataSource {
         } catch (SQLException e) {
             System.out.println("Query failed: " + e.getMessage());
             return null;
+        }
+    }
+
+    private int insertArtist(String name) throws SQLException {
+        queryArtist.setString(1, name);
+        ResultSet results = queryArtist.executeQuery();
+        if (results.next()) {
+            return results.getInt(1);
+        } else {
+            insertIntoArtists.setString(1, name);
+            int affectedRows = insertIntoArtists.executeUpdate();
+
+            if (affectedRows != 1) {
+                throw new SQLException("Couldn't insert artist!");
+            }
+
+            ResultSet generatedKeys = insertIntoArtists.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                return generatedKeys.getInt(1);
+            } else {
+                throw new SQLException("Couldn't get _id for artist");
+            }
+        }
+    }
+
+    private int insertAlbum(String name, int artistId) throws SQLException {
+        queryArtist.setString(1, name);
+        ResultSet results = queryArtist.executeQuery();
+        if (results.next()) {
+            return results.getInt(1);
+        } else {
+            insertIntoAlbums.setString(1, name);
+            insertIntoAlbums.setInt(2, artistId);
+            int affectedRows = insertIntoAlbums.executeUpdate();
+
+            if (affectedRows != 1) {
+                throw new SQLException("Couldn't insert artist!");
+            }
+
+            ResultSet generatedKeys = insertIntoAlbums.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                return generatedKeys.getInt(1);
+            } else {
+                throw new SQLException("Couldn't get _id for artist");
+            }
+        }
+    }
+
+    public void insertSong(String title, String artist, String album, int track) {
+        try {
+            conn.setAutoCommit(false);
+
+            int artistId = insertArtist(artist);
+            int albumId = insertAlbum(album, artistId);
+            insertIntoSongs.setInt(1, track);
+            insertIntoSongs.setString(2, title);
+            insertIntoSongs.setInt(3, albumId);
+            int affectedRows = insertIntoSongs.executeUpdate();
+            if (affectedRows == 1) {
+                conn.commit();
+            } else {
+                throw new SQLException("The song insert failed");
+            }
+        } catch (Exception e) {
+            System.out.println("Insert song exception: " + e.getMessage());
+            try {
+                conn.rollback();
+                System.out.println("Performing rollback");
+            } catch (SQLException e2) {
+                System.out.println("Ohy boy! Things are really bad! " + e2.getMessage());
+            }
+        } finally {
+            try {
+                System.out.println("Resetting default commit behavior");
+                conn.setAutoCommit(true);
+            } catch (SQLException e) {
+                System.out.println("Couldn't reset auto-commit " + e.getMessage());
+            }
         }
     }
 }
