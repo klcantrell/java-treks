@@ -14,7 +14,7 @@ public class Main extends Application {
     public void init() throws Exception {
         super.init();
         if (!DataSource.getInstance().open()) {
-            System.out.println("FATA ERROR: Couldn't connect to database");
+            System.out.println("DATA ERROR: Couldn't connect to database");
             Platform.exit();
         }
 

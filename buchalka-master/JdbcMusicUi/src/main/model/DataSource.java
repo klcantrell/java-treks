@@ -116,6 +116,10 @@ public class DataSource {
             "SELECT * FROM " + TABLE_ALBUMS +
                     " WHERE " + COLUMN_ALBUM_ARTIST + " = ? ORDER BY " + COLUMN_ALBUM_NAME + " COLLATE NOCASE";
 
+    public static final String UPDATE_ARTIST_NAME =
+            "UPDATE " + TABLE_ARTISTS + " SET " +
+                    COLUMN_ARTIST_NAME + " = ? WHERE " + COLUMN_ARTIST_NAME + " = ?";
+
     private PreparedStatement querySongInfoView;
     private PreparedStatement insertIntoArtists;
     private PreparedStatement insertIntoAlbums;
@@ -123,6 +127,7 @@ public class DataSource {
     private PreparedStatement queryArtist;
     private PreparedStatement queryAlbum;
     private PreparedStatement queryAlbumsByArtistId;
+    private PreparedStatement updateArtistName;
 
     public enum OrderBy {
         NONE,
@@ -151,6 +156,7 @@ public class DataSource {
             queryArtist = conn.prepareStatement(QUERY_ARTIST);
             queryAlbum = conn.prepareStatement(QUERY_ALBUM);
             queryAlbumsByArtistId = conn.prepareStatement(QUERY_ALBUMS_BY_ARTIST_ID);
+            updateArtistName = conn.prepareStatement(UPDATE_ARTIST_NAME);
             return true;
         } catch (SQLException e) {
             System.out.println("Couldn't connect to database: " + e.getMessage());
@@ -180,6 +186,9 @@ public class DataSource {
             }
             if (queryAlbumsByArtistId != null) {
                 queryAlbumsByArtistId.close();
+            }
+            if (updateArtistName != null) {
+                updateArtistName.close();
             }
             if (conn != null) {
                 conn.close();
@@ -427,6 +436,19 @@ public class DataSource {
             } else {
                 throw new SQLException("Couldn't get _id for artist");
             }
+        }
+    }
+
+    public boolean updateArtistName(int id, String newName) {
+        try {
+            updateArtistName.setString(1, newName);
+            updateArtistName.setInt(2, id);
+            int affectedRecords = updateArtistName.executeUpdate();
+
+            return affectedRecords == 1;
+        } catch (SQLException e) {
+            System.out.println("Update failed: " + e.getMessage());
+            return false;
         }
     }
 
