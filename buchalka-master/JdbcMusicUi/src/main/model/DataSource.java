@@ -212,8 +212,16 @@ public class DataSource {
             return artists;
 
         } catch (SQLException e) {
-            System.out.println("query failed: " + e.getMessage());
+            System.out.println("Query failed: " + e.getMessage());
             return null;
+        }
+    }
+
+    public List<Album> queryAlbumForArtistId(int id) {
+        try {
+            queryAlbumsByArtistId.setInt(1, id);
+        } catch (SQLException e) {
+
         }
     }
 
