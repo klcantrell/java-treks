@@ -1,11 +1,15 @@
 package com.app.springbasics;
 
 public class BinarySearchImpl {
+
+    private SortAlgorithm sortAlgorithm;
+
+    public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
+        this.sortAlgorithm = sortAlgorithm;
+    }
+
     public int binarySearch(int[] numbers, int numberToSearchFor) {
-        // implement sort logic using bubble sort
-        // tightly coupled...how to switch out algorithm to say quick sort?
-        BubbleSortAlgorithm bubbleSortAlgorithm = new BubbleSortAlgorithm();
-        bubbleSortAlgorithm.sort(numbers);
+        int[] sortedNumbers = sortAlgorithm.sort(numbers);
         // search the array
         return 3;
     }
