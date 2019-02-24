@@ -1,26 +1,20 @@
 package com.app;
 
+import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
-import java.util.List;
-import java.util.Map;
 
 public class Main {
 
     public static void main(String[] args) {
         try {
-            URL url = new URL("http://example.org");
+//            URL url = new URL("http://example.org/somepage.html");
+              URL url = new URL("https://api.flickr.com/services/feeds/photos_public.gne?tags=dogs");
 
-//            URLConnection urlConnection = url.openConnection();
-//            urlConnection.setDoOutput(true);
-//            urlConnection.connect();
-
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("User-Agent", "MyUserAgent");
 
@@ -30,6 +24,7 @@ public class Main {
 
             if (responseCode != 200) {
                 System.out.println("Error reading web page");
+                System.out.println(connection.getResponseMessage());
                 return;
             }
 
@@ -42,30 +37,6 @@ public class Main {
             while ((line = inputReader.readLine()) != null) {
                 System.out.println(line);
             }
-
-//            BufferedReader inputStream = new BufferedReader(
-//                    new InputStreamReader(urlConnection.getInputStream())
-//            );
-
-//            Map<String, List<String>> headerFields = urlConnection.getHeaderFields();
-//
-//            headerFields.entrySet().forEach(headerField -> {
-//                String key = headerField.getKey();
-//                List<String> value = headerField.getValue();
-//                System.out.println("--------key = " + key);
-//                value.forEach(item -> {
-//                    System.out.println("value = " + item);
-//                });
-//            });
-
-//            String line = "";
-//
-//            while (line != null) {
-//                line = inputStream.readLine();
-//                System.out.println(line != null ? line : "");
-//            }
-//
-//            inputStream.close();
 
         } catch (MalformedURLException e) {
                 System.out.println("Malformed URL: " + e.getMessage());
