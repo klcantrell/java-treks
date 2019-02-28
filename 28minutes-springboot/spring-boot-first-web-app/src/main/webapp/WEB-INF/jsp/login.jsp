@@ -3,6 +3,7 @@
         <title>First Web Application</title>
     </head>
     <form method="POST">
+        <p style="color: red;">${errorMessage}</p>
         <label for="name">Name: </label>
         <input type="text" name="name" id="name">
         <label for="password">Password: </label>

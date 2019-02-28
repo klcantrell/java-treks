@@ -3,6 +3,6 @@
         <title>First Web Application</title>
     </head>
     <body>
-        Welcome ${name}!!
+        Welcome ${name}!! Your password is ${password}.
     </body>
 </html>
