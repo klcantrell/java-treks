@@ -1,8 +1,8 @@
-package com.kalcantrell.springbootfirstwebapp.controller;
+package com.kalcantrell.springbootfirstwebapp.Controller;
 
 
 import com.kalcantrell.springbootfirstwebapp.Parameters;
-import com.kalcantrell.springbootfirstwebapp.service.LoginService;
+import com.kalcantrell.springbootfirstwebapp.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

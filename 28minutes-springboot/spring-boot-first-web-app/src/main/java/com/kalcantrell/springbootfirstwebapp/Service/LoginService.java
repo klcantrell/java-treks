@@ -1,4 +1,4 @@
-package com.kalcantrell.springbootfirstwebapp.service;
+package com.kalcantrell.springbootfirstwebapp.Service;
 
 import org.springframework.stereotype.Component;
 
