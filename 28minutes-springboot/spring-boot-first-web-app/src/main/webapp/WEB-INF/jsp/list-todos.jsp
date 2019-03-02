@@ -3,29 +3,35 @@
 <html>
     <head>
         <title>Todos for ${name}</title>
+        <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Your Todos</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Description</th>
-                    <th>Target Date</th>
-                    <th>Done?</th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach items="${todos}" var="todo">
+        <div class="container">
+            <table class="table table-striped">
+                <h1>Your Todos</h1>
+                <thead>
                     <tr>
-                        <td>${todo.desc}</td>
-                        <td>${todo.targetDate}</td>
-                        <td>${todo.isDone}</td>
+                        <th>Description</th>
+                        <th>Target Date</th>
+                        <th>Done?</th>
                     </tr>
-                </c:forEach>
-            </tbody>
-        </table>
-        <div>
-            <a href="/add-todo">Add todo</a>
-        </div>
+                </thead>
+                <tbody>
+                    <c:forEach items="${todos}" var="todo">
+                        <tr>
+                            <td>${todo.desc}</td>
+                            <td>${todo.targetDate}</td>
+                            <td>${todo.isDone}</td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+            <div>
+                <a class="btn" href="/add-todo">Add todo</a>
+            </div>
+        <div/>
+
+        <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+        <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </body>
 </html>
