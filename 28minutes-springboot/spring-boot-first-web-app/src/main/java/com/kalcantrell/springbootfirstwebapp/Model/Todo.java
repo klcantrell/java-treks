@@ -1,11 +1,15 @@
 package com.kalcantrell.springbootfirstwebapp.Model;
 
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class Todo {
     private int id;
     private String user;
+
+    @Size(min = 10, message = "Enter at least 10 characters")
     private String desc;
+
     private Date targetDate;
     private boolean isDone;
 
@@ -51,11 +55,11 @@ public class Todo {
         this.targetDate = targetDate;
     }
 
-    public boolean isDone() {
+    public boolean getIsDone() {
         return isDone;
     }
 
-    public void setDone(boolean isDone) {
+    public void setIsDone(boolean isDone) {
         this.isDone = isDone;
     }
 
