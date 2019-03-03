@@ -21,23 +21,9 @@ public class LoginController {
         this.service = service;
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String loginMessage(Parameters params, ModelMap model) {
-        model.put("name", params.getName());
-        return "login";
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String showWelcomePage(Parameters params, ModelMap model) {
-        boolean isValidUser = service.validateUser(params.getName(), params.getPassword());
-
-        if (!isValidUser) {
-            model.put("errorMessage", "Wrong password!");
-            return "login";
-        }
-
-        model.put("name", params.getName());
-        model.put("password", params.getPassword());
+        model.put("name", "kal");
         return "welcome";
     }
 }
