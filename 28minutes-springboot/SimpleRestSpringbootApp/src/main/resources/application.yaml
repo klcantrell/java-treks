@@ -1,0 +1,13 @@
+logging:
+  level:
+    org.springframework: INFO
+    org.springframework.web.servlet: DEBUG
+management:
+  endpoints.web.exposure.include: '*'
+app.name: 'My awesome app'
+welcome:
+  message: 'Welcome message from ${app.name} property file!'
+basic:
+  value: true
+  message: 'Welcome to this awesome thing'
+  number: 99
