@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dd517cbf-263a-4134-8071-584a1643b1de" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/jpa/UserRestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/jpa/UserRestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/model/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/model/Survey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/model/Survey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/controller/SurveyControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/controller/SurveyControllerIT.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,8 +28,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/app/controller/SurveyControllerIT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+            <state relative-caret-position="216">
+              <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/controller/SurveyController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/service/SurveyService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -46,6 +64,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>spring boot dep</find>
+      <find>==e==</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -91,9 +110,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="832" />
+    <option name="x" value="841" />
+    <option name="y" value="-17" />
     <option name="width" value="855" />
-    <option name="height" value="1018" />
+    <option name="height" value="1019" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -101,7 +121,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -118,37 +137,56 @@
               <item name="SimpleRestSpringbootApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="SimpleRestSpringbootApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SimpleRestSpringbootApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="SimpleRestSpringbootApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SimpleRestSpringbootApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="SimpleRestSpringbootApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleRestSpringbootApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SimpleRestSpringbootApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleRestSpringbootApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SimpleRestSpringbootApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552789107771" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552830350755" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-basics" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -170,7 +208,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SurveyControllerIT.testContainsString">
+  <component name="RunManager" selected="JUnit.SurveyControllerIT.retrieveSurveyQuestions">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.app.Application" />
       <module name="SimpleRestSpringbootApp" />
@@ -184,7 +222,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SurveyControllerIT.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SurveyControllerIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SimpleRestSpringbootApp" />
       <extension name="coverage">
         <pattern>
@@ -194,13 +232,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.app.controller" />
       <option name="MAIN_CLASS_NAME" value="com.app.controller.SurveyControllerIT" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SurveyControllerIT.testContainsString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SurveyControllerIT.retrieveSurveyQuestions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SimpleRestSpringbootApp" />
       <extension name="coverage">
         <pattern>
@@ -210,33 +247,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.app.controller" />
       <option name="MAIN_CLASS_NAME" value="com.app.controller.SurveyControllerIT" />
-      <option name="METHOD_NAME" value="testContainsString" />
+      <option name="METHOD_NAME" value="retrieveSurveyQuestions" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SurveyControllerIT.testJsonAssert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SimpleRestSpringbootApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.app.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.app.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.app.controller.SurveyControllerIT" />
-      <option name="METHOD_NAME" value="testJsonAssert" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.Application" />
+      <item itemvalue="JUnit.SurveyControllerIT" />
+      <item itemvalue="JUnit.SurveyControllerIT.retrieveSurveyQuestions" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SurveyControllerIT.testContainsString" />
-        <item itemvalue="JUnit.SurveyControllerIT.testJsonAssert" />
-        <item itemvalue="JUnit.SurveyControllerIT.test" />
+        <item itemvalue="JUnit.SurveyControllerIT.retrieveSurveyQuestions" />
+        <item itemvalue="JUnit.SurveyControllerIT" />
         <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
@@ -255,41 +280,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SurveyControllerIT_test - 2019.03.16 at 21h 30m 18s.xml">
-      <configuration name="SurveyControllerIT.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SurveyControllerIT_test - 2019.03.16 at 21h 31m 08s.xml">
-      <configuration name="SurveyControllerIT.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SurveyControllerIT_test - 2019.03.16 at 21h 59m 00s.xml">
-      <configuration name="SurveyControllerIT.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SurveyControllerIT_test - 2019.03.16 at 22h 05m 20s.xml">
-      <configuration name="SurveyControllerIT.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SurveyControllerIT_testJsonAssert - 2019.03.16 at 22h 08m 51s.xml">
-      <configuration name="SurveyControllerIT.testJsonAssert" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SurveyControllerIT_testJsonAssert - 2019.03.16 at 22h 12m 34s.xml">
-      <configuration name="SurveyControllerIT.testJsonAssert" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SurveyControllerIT_testJsonAssert - 2019.03.16 at 22h 12m 50s.xml">
-      <configuration name="SurveyControllerIT.testJsonAssert" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SurveyControllerIT_testJsonAssert - 2019.03.16 at 22h 13m 07s.xml">
-      <configuration name="SurveyControllerIT.testJsonAssert" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SurveyControllerIT_testContainsString - 2019.03.16 at 22h 15m 31s.xml">
+    <history-entry file="SurveyControllerIT_testContainsString - 2019.03.16 at 22h 16m 43s.xml">
       <configuration name="SurveyControllerIT.testContainsString" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SurveyControllerIT_testContainsString - 2019.03.16 at 22h 16m 25s.xml">
-      <configuration name="SurveyControllerIT.testContainsString" configurationId="JUnit" />
+    <history-entry file="SurveyControllerIT_surveyQuestionController - 2019.03.16 at 22h 38m 46s.xml">
+      <configuration name="SurveyControllerIT.surveyQuestionController" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SurveyControllerIT_retrieveSurveyQuestions - 2019.03.16 at 22h 39m 55s.xml">
+      <configuration name="SurveyControllerIT.retrieveSurveyQuestions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SurveyControllerIT_addQuestion - 2019.03.17 at 09h 19m 42s.xml">
+      <configuration name="SurveyControllerIT.addQuestion" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SurveyControllerIT_addQuestion - 2019.03.17 at 09h 20m 02s.xml">
+      <configuration name="SurveyControllerIT.addQuestion" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SurveyControllerIT - 2019.03.17 at 09h 25m 00s.xml">
+      <configuration name="SurveyControllerIT" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SurveyControllerIT_retrieveSurveyQuestions - 2019.03.17 at 09h 34m 28s.xml">
+      <configuration name="SurveyControllerIT.retrieveSurveyQuestions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SurveyControllerIT_retrieveSurveyQuestions - 2019.03.17 at 09h 35m 04s.xml">
+      <configuration name="SurveyControllerIT.retrieveSurveyQuestions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SurveyControllerIT_retrieveSurveyQuestions - 2019.03.17 at 09h 36m 35s.xml">
+      <configuration name="SurveyControllerIT.retrieveSurveyQuestions" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SurveyControllerIT_retrieveSurveyQuestions - 2019.03.17 at 09h 40m 21s.xml">
+      <configuration name="SurveyControllerIT.retrieveSurveyQuestions" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1536" height="864" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23825504" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24161074" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -298,7 +324,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.54697555" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.54568857" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49944383" weight="0.49420848" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -306,7 +332,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5005562" side_tool="true" weight="0.3906083" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32977587" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.35521236" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24972191" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -372,20 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/service/SurveyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1896">
-          <caret line="79" column="20" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/model/Survey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/maven-4.0.0.xsd">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -393,22 +405,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/model/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app/configuration.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/controller/WelcomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app/configuration/BasicConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -472,17 +470,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/controller/WelcomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/model/Survey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/model/Question.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app/controller/SurveyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+        <state relative-caret-position="24">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/service/SurveyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/org/hamcrest/MatcherAssert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/app/controller/SurveyControllerIT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+        <state relative-caret-position="216">
+          <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
         </state>
       </provider>
     </entry>
