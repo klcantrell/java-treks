@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Component("com.app")
 public class Application {
 
-	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(Application.class, args);
+    public static void main(String[] args) {
+        ApplicationContext ctx = SpringApplication.run(Application.class, args);
 
-	}
+    }
 
 }
