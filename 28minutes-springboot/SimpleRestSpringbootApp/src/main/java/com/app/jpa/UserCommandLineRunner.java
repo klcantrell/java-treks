@@ -30,6 +30,9 @@ public class UserCommandLineRunner implements CommandLineRunner {
         Stream.of(userRepository.findAll()).forEach(user -> {
            log.info(user.toString());
         });
+        Stream.of(userRepository.findByRole("Admin")).forEach(user -> {
+            log.info(user.toString());
+        });
     }
 
 }
