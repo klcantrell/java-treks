@@ -18,7 +18,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.nio.charset.Charset;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
 
@@ -39,8 +41,19 @@ public class SurveyControllerIT {
     @Before
     public void setup() {
         restTemplate = new TestRestTemplate();
-        httpHeaders = new HttpHeaders();
+        httpHeaders = createHttpHeaders("user1", "secret1");
         httpHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+    }
+
+    private HttpHeaders createHttpHeaders(String userId, String password) {
+        HttpHeaders headers = new HttpHeaders();
+        String auth = userId + ":" + password;
+
+        byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes(Charset.forName("US-ASCII")));
+        String headerValue = "Basic " + new String(encodedAuth);
+        headers.add("Authorization", headerValue);
+
+        return headers;
     }
 
     @Test
