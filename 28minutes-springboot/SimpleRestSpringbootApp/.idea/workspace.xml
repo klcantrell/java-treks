@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd517cbf-263a-4134-8071-584a1643b1de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/controller/SurveyControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/controller/SurveyControllerIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/app/controller/SurveyControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/app/controller/SurveyControllerTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="dd517cbf-263a-4134-8071-584a1643b1de" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -213,7 +208,7 @@
     <frame x="-8" y="-8" width="1858" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2541713" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25695217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
