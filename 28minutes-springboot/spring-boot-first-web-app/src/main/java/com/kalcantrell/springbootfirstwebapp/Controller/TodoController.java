@@ -2,6 +2,7 @@ package com.kalcantrell.springbootfirstwebapp.Controller;
 
 
 import com.kalcantrell.springbootfirstwebapp.Model.Todo;
+import com.kalcantrell.springbootfirstwebapp.Service.TodoRepository;
 import com.kalcantrell.springbootfirstwebapp.Service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -27,21 +28,23 @@ public class TodoController {
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
 
     private TodoService service;
+    private TodoRepository todoRepository;
 
     @Autowired
-    public TodoController(TodoService service) {
+    public TodoController(TodoService service, TodoRepository todoRepository) {
         this.service = service;
+        this.todoRepository = todoRepository;
     }
 
     @RequestMapping(value="/list-todos", method = RequestMethod.GET)
     public String showTodosList(ModelMap model) {
         String name = getLoggedInUserName();
-        model.put("todos", service.retrieveTodos(name));
+        model.put("todos", todoRepository.findByUser(name));
         return "list-todos";
     }
 
@@ -55,19 +58,20 @@ public class TodoController {
         if (result.hasErrors()) {
             return "todo";
         }
-        service.addTodo(getLoggedInUserName(), todo.getDesc(), todo.getTargetDate(), false);
+        todo.setUser(getLoggedInUserName());
+        todoRepository.save(todo);
         return "redirect:/list-todos";
     }
 
     @RequestMapping(value="/delete-todo/{id}", method = RequestMethod.POST)
     public String deleteTodo(@PathVariable int id) {
-        service.deleteTodo(id);
+        todoRepository.deleteById(id);
         return "redirect:/list-todos";
     }
 
     @RequestMapping(value="/update-todo/{id}", method = RequestMethod.GET)
     public String showUpdateTodo(@PathVariable int id, ModelMap model) {
-        Todo todo = service.retrieveTodo(id);
+        Todo todo = todoRepository.getOne(id);
         model.put("todo", todo);
         return "todo";
     }
@@ -78,7 +82,7 @@ public class TodoController {
             return "todo";
         }
         todo.setUser(getLoggedInUserName());
-        service.updateTodo(todo);
+        todoRepository.save(todo);
         return "redirect:/list-todos";
     }
 

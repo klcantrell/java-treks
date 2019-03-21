@@ -1,11 +1,18 @@
 package com.kalcantrell.springbootfirstwebapp.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
+@Entity
 public class Todo {
 
+    @Id
+    @GeneratedValue
     private int id;
+
     private String user;
     private Date targetDate;
     private boolean isDone;
